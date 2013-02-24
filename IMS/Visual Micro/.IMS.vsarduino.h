@@ -1,6 +1,6 @@
-//Board = Arduino Mega 2560 or Mega ADK
+//Board = Arduino Nano w/ ATmega328
 #define ARDUINO 103
-#define __AVR_ATmega2560__
+#define __AVR_ATmega328P__
 #define F_CPU 16000000L
 #define __AVR__
 #define __cplusplus
@@ -26,8 +26,8 @@ extern "C" void __cxa_pure_virtual() {}
 
 //already defined in arduno.h
 //already defined in arduno.h
-extern void *testMalloc(size_t size);
-extern void testFree(void *block);
+extern void *safeMalloc(size_t size);
+extern void safeFree(void *block);
 void fr(const char* text);
 void initScreen();
 char* substr(char* str, int start, int number);
@@ -37,16 +37,16 @@ int drawStatusMessage(char* msg);
 void frameStatusMessage(char* msg);
 void frame();
 
-#include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
+#include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\eightanaloginputs\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino\arduino.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\IMS.ino"
-#include "C:\Users\Erwin\GitHub\IMS\src\Definitions.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\Director.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\Director.ino"
-#include "C:\Users\Erwin\GitHub\IMS\src\MemoryFunctions.ino"
-#include "C:\Users\Erwin\GitHub\IMS\src\Pins.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\ScreenFunctions.ino"
-#include "C:\Users\Erwin\GitHub\IMS\src\Sensor.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\Sensor.ino"
-#include "C:\Users\Erwin\GitHub\IMS\src\SensorDHT.h"
-#include "C:\Users\Erwin\GitHub\IMS\src\SensorDHT.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\IMS.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Definitions.h"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Director.h"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Director.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\MemoryFunctions.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Pins.h"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\ScreenFunctions.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Sensor.h"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\Sensor.ino"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\SensorDHT.h"
+#include "C:\Users\Erwin\GitHub\IMS\IMS\SensorDHT.ino"
