@@ -8,17 +8,10 @@ SensorDHT::SensorDHT(char* name, SensorType type, int _pin)
 	Humidity = -1;
 	Temperature = -1;
 }
-/*SensorDHT::SensorDHT()
-	: Sensor("DHT",DHT11)
-{
-	pin = 0;
-	Humidity = 0;
-	Temperature = 0;
-}*/
 int SensorDHT::Init(){
 	//nothing
-	OffsetH = 0;
-	OffsetT = 0;
+	OffsetH = 5; //confirm
+	OffsetT = -1; //measured against others
 }
 int SensorDHT::updateValue(){
 	int chk = 1;

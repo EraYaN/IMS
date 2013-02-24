@@ -1,9 +1,10 @@
 #ifndef PINS_H
 #define PINS_H
 //Pin configurations
-const int DHT22_PIN = 6; //unused
-const int ONEWIRE_PIN = 7; //DS18B20 etc. 4.7k resistor between +5V line and signal pin, for all one-wire devices. http://www.hacktronics.com/Tutorials/arduino-1-wire-address-finder.html
-const int SCREEN_MOSI = 47;// Used for LCD R/W pin (SW SPI)
-const int SCREEN_SCK = 48; // Used for LCD E pin (SW SPI)
-const int SCREEN_SS = 49; //Used for LCD RS pin (SW SPI)
+const int DHT22_PIN = 6; //unused  SPI Com: SCK = 13, MOSI = 11, CS (SCE) = 10, A0 (D/C) = 9, Reset = 8;
+const int SCREEN_MOSI = 11;// Used for LCD DN(MOSI) pin (SW SPI)
+const int SCREEN_SCK = 13; // Used for LCD SCLK pin (SW SPI)
+const int SCREEN_SS = 10; //Used for LCD SCE pin (SW SPI)
+const int SCREEN_A0 = 9; //Used for LCD D/C pin (SW SPI)
+const int SCREEN_RST = 8; //Used for LCD RST pin (SW SPI)
 #endif

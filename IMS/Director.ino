@@ -1,5 +1,4 @@
 #include "Director.h"
-#include "Program.h"
 #include <Time.h>
 
 //Function Declarations for Director
@@ -8,8 +7,7 @@
 /// </summary>
 /// <param name="pid">ID of the program to run.</param>
 Director::Director(unsigned int pid)
-	:s_DHT11("Huiskamer",DHT11,DHT11_PIN),
-	s_pHProbe()
+	:s_DHT22("Broedmachine",DHT22,DHT22_PIN)
 {
 	//contruct
 	program_id = pid;	
@@ -22,9 +20,8 @@ Director::Director(unsigned int pid)
 Director(0);
 }*/
 void Director::Init() {
-	//contruct
-	s_pHProbe.Init();
-	s_DHT11.Init();
+	//contruct	
+	s_DHT22.Init();
 }
 void Director::Tick(){
 	//runs every "loop()"
@@ -39,15 +36,10 @@ void Director::StartProgram(){
 	//start the program.
 	int errCode = 0;
 	//update all sensor values
-	if(errCode=s_DHT11.updateValue()!=0) Serial.println("DHT11 update error"+errCode);
-	delay(100);
-	if(errCode=s_pHProbe.updateValue(s_DHT11.getTemperature())!=0) Serial.println("pHProbe update error"+errCode);
-	//
-	digitalClockDisplay();
+	if(errCode=s_DHT22.updateValue()!=0) Serial.println("DHT11 update error"+errCode);
+	delay(100);	
+	//	
 	//draw screen
-	frame(); //TODO hookup screen and uncomment this line
-	checkForHTTPConnections(); //check if any client has connected and respond.
-	//delay(2000);
-	//s_pHProbe.Calibrate();
-
+	frame(); 
+	//delay(2000);	
 }

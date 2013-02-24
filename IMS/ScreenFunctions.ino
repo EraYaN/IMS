@@ -1,9 +1,9 @@
 #include <U8glib.h>
 #include <string.h>
-U8GLIB_PCD8544 u8g(13, 11, 10, 9, 8 );        // SPI Com: SCK = 13, MOSI = 11, CS (SCE) = 10, A0 (D/C) = 9, Reset = 8; U8GLIB_PCD8544(sclk, dn, sce, d_c , rst)
+U8GLIB_PCD8544 u8g(SCREEN_SCK, SCREEN_MOSI, SCREEN_SS, SCREEN_A0, SCREEN_RST);        // SPI Com: SCK = 13, MOSI = 11, CS (SCE) = 10, A0 (D/C) = 9, Reset = 8; U8GLIB_PCD8544(sclk, dn, sce, d_c , rst)
 
-const u8g_fntpgm_uint8_t *font_l = u8g_font_helvR10r;
-const u8g_fntpgm_uint8_t *font_m = u8g_font_helvR08r;
+const u8g_fntpgm_uint8_t *font_l = u8g_font_helvR10;
+const u8g_fntpgm_uint8_t *font_m = u8g_font_helvR08;
 const u8g_fntpgm_uint8_t *font_s = u8g_font_04b_03r;
 const u8g_fntpgm_uint8_t *font_xs = u8g_font_u8glib_4;
 
@@ -106,15 +106,13 @@ int unsigned splitInLines(char* msg, char* lines[], size_t maxlines, bool &lefto
 void draw(){
 	char* buff = (char*)safeMalloc(100);
 	u8g.setColorIndex(1);	
-	u8g.setFont(font_m);
-	snprintf(buff,100,"PH: %0.2lf",drctr.s_pHProbe.getpH());
+	u8g.setFont(font_m);	
+	snprintf(buff,100,"T: %0.1lf %cC",drctr.s_DHT22.getTemperature(),'\xb0');
 	u8g.drawStr( 1,10, buff);
-	snprintf(buff,100,"T: %0.lf %cC",drctr.s_DHT11.getTemperature(),'\xb0');
-	u8g.drawStr( 1,20, buff);
-	snprintf(buff,100,"H: %0.lf %%",drctr.s_DHT11.getHumidity());
-	u8g.drawStr( 1,30, buff);	
-	u8g.setFont(u8g_font_5x7);
-	snprintf(buff,100,"fM: %0.1f%%, FR: %0.1f%%",(float)freeMemory()/(8*1024)*100,(float)FreeRam()/(8*1024)*100);
+	snprintf(buff,100,"H: %0.1lf %%",drctr.s_DHT22.getHumidity());
+	u8g.drawStr( 1,20, buff);	
+	u8g.setFont(font_xs);
+	snprintf(buff,100,"fM: %0.1f%%",(float)freeMemory()/(8*1024)*100);
 	u8g.drawStr( 1,40, buff);	
 	safeFree(buff);
 }
