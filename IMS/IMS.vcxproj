@@ -43,8 +43,8 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino;C:\Program Files (x86)\Arduino\hardware\arduino\variants\eightanaloginputs;C:\Program Files (x86)\Arduino\libraries\SPI;C:\Program Files (x86)\Arduino\libraries\SPI\utility;\\SERVER\Erwin\Documents\Arduino\libraries\DHTLib;\\SERVER\Erwin\Documents\Arduino\libraries\DHTLib\utility;\\SERVER\Erwin\Documents\Arduino\libraries\MemoryFree;\\SERVER\Erwin\Documents\Arduino\libraries\MemoryFree\utility;\\SERVER\Erwin\Documents\Arduino\libraries\U8glib;\\SERVER\Erwin\Documents\Arduino\libraries\U8glib\utility;\\SERVER\Erwin\Documents\Arduino\libraries\Time;\\SERVER\Erwin\Documents\Arduino\libraries\Time\utility;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\;c:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;c:\program files (x86)\arduino\hardware\tools\avr\avr\;c:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>C:\Users\Erwin\GitHub\IMS\IMS\Visual Micro\.IMS.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>F:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino;F:\Program Files (x86)\Arduino\hardware\arduino\variants\eightanaloginputs;F:\Program Files (x86)\Arduino\libraries\SPI;F:\Program Files (x86)\Arduino\libraries\SPI\utility;\\SERVER\erwin\Documents\Arduino\libraries\DHTLib;\\SERVER\erwin\Documents\Arduino\libraries\DHTLib\utility;\\SERVER\erwin\Documents\Arduino\libraries\MemoryFree;\\SERVER\erwin\Documents\Arduino\libraries\MemoryFree\utility;\\SERVER\erwin\Documents\Arduino\libraries\U8glib;\\SERVER\erwin\Documents\Arduino\libraries\U8glib\utility;\\SERVER\erwin\Documents\Arduino\libraries\Time;\\SERVER\erwin\Documents\Arduino\libraries\Time\utility;f:\program files (x86)\arduino\hardware\tools\avr\avr\include\;f:\program files (x86)\arduino\hardware\tools\avr\avr\include\avr\;f:\program files (x86)\arduino\hardware\tools\avr\avr\;f:\program files (x86)\arduino\hardware\tools\avr\lib\gcc\avr\4.3.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>F:\Users\Erwin\GitHub\IMS\IMS\Visual Micro\.IMS.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>ARDUINO=103;__AVR_ATmega328P__;F_CPU=16000000L;__AVR__;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -102,7 +102,6 @@
       <FileType>CppCode</FileType>
     </ClInclude>
     <ClInclude Include="Visual Micro\.IMS.vsarduino.h" />
-    <ClInclude Include="Visual Micro\.src.vsarduino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
